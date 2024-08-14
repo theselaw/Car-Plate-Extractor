@@ -181,12 +181,14 @@ with header :
 
     _, col5, _ = st.columns([0.05,1,0.1])
 
-    st.write("The differents models detect the car and the license plate in a given image, then extracts the info about the license using EasyOCR, and crop and save the license plate as a Image, with a CSV file with all the data.   ")
+    st.markdown('<p style="color: white;">The differents models detect the car and the license plate in a given image, then extracts the info about the license using EasyOCR, and crop and save the license plate as a Image, with a CSV file with all the data.</p>', unsafe_allow_html=True)
+
 
 
 with body :
     _, col1, _ = st.columns([0.1,1,0.2])
-    col1.subheader("Click any of the Options to run detection")
+    col1.markdown('<h2 style="color: white;">Click any of the Options to run detection</h2>', unsafe_allow_html=True)
+
 
     _, colb1, colb2, colb3 = st.columns([0.2, 0.7, 0.6, 1])
 
