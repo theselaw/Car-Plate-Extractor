@@ -11,7 +11,7 @@ import os
 from  streamlit_webrtc import webrtc_streamer
 import av
 
-set_background("./imgs/bg.jpg")
+set_background("./imgs/demo-bg.jpg")
 
 folder_path = "./licenses_plates_imgs_detected/"
 LICENSE_MODEL_DETECTION_DIR = './models/license_plate_detector.pt'
@@ -174,7 +174,7 @@ with header :
 
 
     _, col0, _ = st.columns([0.15,1,0.1])
-    col0.image("./imgs/demo2.jpg", width=450, height=450)
+    col0.image("./imgs/demo2.jpg", width=450)
 
     _, col, _ = st.columns([0.3,1,0.1])
     col.image("./imgs/extract2.jpg")
