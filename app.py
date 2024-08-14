@@ -165,22 +165,12 @@ def change_state_camera() :
 def change_state_live() :
     st.session_state["state"] = "Live"
 
-    # Inject custom CSS to change text color to white
-st.markdown(
-    """
-    <style>
-    .css-1u4np5m { color: white; }
-    .css-1xarlj7 { color: white; }
-    .css-1v0mbdj { color: white; }
-    .css-1v0mbdj .css-1v0mbdj { color: white; }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+    
     
 with header :
     _, col1, _ = st.columns([0.2,1,0.1])
-    col1.title("Automatic Number Plate Detection System ")
+    col1.markdown('<h1 style="color: white;">Automatic Number Plate Detection System</h1>', unsafe_allow_html=True)
+
 
 
     _, col0, _ = st.columns([0.15,1,0.1])
@@ -234,13 +224,15 @@ with body :
                 
                 if len(texts) == 1 and len(license_plate_crop) :
                     _, col3, _ = st.columns([0.4,1,0.2])
-                    col3.header("Detection Results:")
+                    col3.markdown('<h2 style="color: white;">Detection Result:</h2>', unsafe_allow_html=True)
+
 
                     _, col4, _ = st.columns([0.1,1,0.1])
                     col4.image(prediction)
 
                     _, col9, _ = st.columns([0.4,1,0.2])
-                    col9.header("Cropped Plate:")
+                    col9.markdown('<h2 style="color: white;">Detection Result:</h2>', unsafe_allow_html=True)
+
 
                     _, col10, _ = st.columns([0.3,1,0.1])
                     col10.image(license_plate_crop[0], width=350)
