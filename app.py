@@ -174,7 +174,7 @@ with header :
 
 
     _, col0, _ = st.columns([0.15,1,0.1])
-    col0.image("./imgs/demo2.jpg", width=500)
+    col0.image("./imgs/demo2.jpg", width=450)
 
     _, col, _ = st.columns([0.3,1,0.1])
     col.image("./imgs/extract2.jpg")
