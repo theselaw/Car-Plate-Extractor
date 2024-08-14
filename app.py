@@ -11,7 +11,7 @@ import os
 from  streamlit_webrtc import webrtc_streamer
 import av
 
-set_background("./imgs/bg2.jpg")
+set_background("./imgs/bg.jpg")
 
 folder_path = "./licenses_plates_imgs_detected/"
 LICENSE_MODEL_DETECTION_DIR = './models/license_plate_detector.pt'
@@ -167,10 +167,10 @@ def change_state_live() :
     
 with header :
     _, col1, _ = st.columns([0.2,1,0.1])
-    col1.title("License Car Plate Detection ")
+    col1.title("Automatic Number Plate Detection System ")
 
     _, col0, _ = st.columns([0.15,1,0.1])
-    col0.image("./imgs/bg2.jpg", width=500)
+    col0.image("./imgs/demo1.jpg", width=500)
 
     _, col, _ = st.columns([0.3,1,0.1])
     col.image("./imgs/extract.jpg")
