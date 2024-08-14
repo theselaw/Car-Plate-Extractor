@@ -174,10 +174,7 @@ with header :
     col0.image("./imgs/demo2.jpg", width=500)
 
     _, col, _ = st.columns([0.3,1,0.1])
-    with col:
-      st.write("Cropped plate")
-      st.image("./imgs/extract2.jpg")
-
+    col.image("./imgs/extract2.jpg")
 
     _, col5, _ = st.columns([0.05,1,0.1])
 
