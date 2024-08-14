@@ -181,7 +181,7 @@ with header :
 
     _, col5, _ = st.columns([0.05,1,0.1])
 
-    st.markdown('<p style="color: white;">The differents models detect the car and the license plate in a given image, then extracts the info about the license using EasyOCR, and crop and save the license plate as a Image, with a CSV file with all the data.</p>', unsafe_allow_html=True)
+    st.markdown('<p style="color: white;">The models detect the car and the license plate in a given image, then extracts the info about the license using EasyOCR, and crop and save the license plate as a Image, with a CSV file with all the data.</p>', unsafe_allow_html=True)
 
 
 
