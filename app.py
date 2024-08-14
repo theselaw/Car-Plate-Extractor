@@ -11,7 +11,7 @@ import os
 from  streamlit_webrtc import webrtc_streamer
 import av
 
-set_background("./imgs/bg2.jpeg")
+set_background("./imgs/bg2.jpg")
 
 folder_path = "./licenses_plates_imgs_detected/"
 LICENSE_MODEL_DETECTION_DIR = './models/license_plate_detector.pt'
