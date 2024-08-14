@@ -11,7 +11,7 @@ import os
 from  streamlit_webrtc import webrtc_streamer
 import av
 
-set_background("./imgs/background.png")
+set_background("./imgs/bg2.jpeg")
 
 folder_path = "./licenses_plates_imgs_detected/"
 LICENSE_MODEL_DETECTION_DIR = './models/license_plate_detector.pt'
@@ -167,17 +167,13 @@ def change_state_live() :
     
 with header :
     _, col1, _ = st.columns([0.2,1,0.1])
-    col1.title("💥 License Car Plate Detection 🚗")
+    col1.title("License Car Plate Detection ")
 
     _, col0, _ = st.columns([0.15,1,0.1])
-    col0.image("./imgs/test_background.jpg", width=500)
-
-
-    _, col4, _ = st.columns([0.1,1,0.2])
-    col4.subheader("Computer Vision Detection with YoloV8 🧪")
+    col0.image("./imgs/bg2.jpg", width=500)
 
     _, col, _ = st.columns([0.3,1,0.1])
-    col.image("./imgs/plate_test.jpg")
+    col.image("./imgs/extract.jpg")
 
     _, col5, _ = st.columns([0.05,1,0.1])
 
@@ -186,7 +182,7 @@ with header :
 
 with body :
     _, col1, _ = st.columns([0.1,1,0.2])
-    col1.subheader("Check It-out the License Car Plate Detection Model 🔎!")
+    col1.subheader("Click any of the Options to run detection")
 
     _, colb1, colb2, colb3 = st.columns([0.2, 0.7, 0.6, 1])
 
@@ -198,7 +194,7 @@ with body :
         pass
 
     if st.session_state["state"] == "Uploader" :
-        img = st.file_uploader("Upload a Car Image: ", type=["png", "jpg", "jpeg"])
+        img = st.file_uploader("Upload a Car Image: ", type=["png", "jpg", "jpeg", "."mp4"])
     elif st.session_state["state"] == "Camera" :
         img = st.camera_input("Take a Photo: ")
     elif st.session_state["state"] == "Live" :
@@ -224,31 +220,31 @@ with body :
                 
                 if len(texts) == 1 and len(license_plate_crop) :
                     _, col3, _ = st.columns([0.4,1,0.2])
-                    col3.header("Detection Results ✅:")
+                    col3.header("Detection Results:")
 
                     _, col4, _ = st.columns([0.1,1,0.1])
                     col4.image(prediction)
 
                     _, col9, _ = st.columns([0.4,1,0.2])
-                    col9.header("License Cropped ✅:")
+                    col9.header("Cropped Plate:")
 
                     _, col10, _ = st.columns([0.3,1,0.1])
                     col10.image(license_plate_crop[0], width=350)
 
                     _, col11, _ = st.columns([0.45,1,0.55])
-                    col11.success(f"License Number: {texts[0]}")
+                    col11.success(f"License Number Detected: {texts[0]}")
 
                     df = pd.read_csv(f"./csv_detections/detection_results.csv")
                     st.dataframe(df)
                 elif len(texts) > 1 and len(license_plate_crop) > 1  :
                     _, col3, _ = st.columns([0.4,1,0.2])
-                    col3.header("Detection Results ✅:")
+                    col3.header("Detection Results :")
 
                     _, col4, _ = st.columns([0.1,1,0.1])
                     col4.image(prediction)
 
                     _, col9, _ = st.columns([0.4,1,0.2])
-                    col9.header("License Cropped ✅:")
+                    col9.header("License Cropped :")
 
                     _, col10, _ = st.columns([0.3,1,0.1])
 
@@ -257,14 +253,14 @@ with body :
                     col7, col8 = st.columns([1,1])
                     for i in range(0, len(license_plate_crop)) :
                         col10.image(license_plate_crop[i], width=350)
-                        col11.success(f"License Number {i}: {texts[i]}")
+                        col11.success(f"License Number Detected {i}: {texts[i]}")
 
                     df = pd.read_csv(f"./csv_detections/detection_results.csv")
                     st.dataframe(df)
             else :
                 prediction = results[0]
                 _, col3, _ = st.columns([0.4,1,0.2])
-                col3.header("Detection Results ✅:")
+                col3.header("Detection Results :")
 
                 _, col4, _ = st.columns([0.3,1,0.1])
                 col4.image(prediction)
