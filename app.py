@@ -164,6 +164,19 @@ def change_state_camera() :
 
 def change_state_live() :
     st.session_state["state"] = "Live"
+
+    # Inject custom CSS to change text color to white
+st.markdown(
+    """
+    <style>
+    .css-1u4np5m { color: white; }
+    .css-1xarlj7 { color: white; }
+    .css-1v0mbdj { color: white; }
+    .css-1v0mbdj .css-1v0mbdj { color: white; }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     
 with header :
     _, col1, _ = st.columns([0.2,1,0.1])
