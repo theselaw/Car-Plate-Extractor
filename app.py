@@ -198,7 +198,7 @@ with body :
     elif st.session_state["state"] == "Camera" :
         img = st.camera_input("Take a Photo: ")
     elif st.session_state["state"] == "Live" :
-        webrtc_streamer(key="sample", video_processor_factory=VideoProcessor, width=800)
+        webrtc_streamer(key="sample", video_processor_factory=VideoProcessor, width=500)
         img = None
 
     _, col2, _ = st.columns([0.3,1,0.2])
@@ -208,7 +208,7 @@ with body :
     
     if img is not None:
         image = np.array(Image.open(img))    
-        col2.image(image, width=800)
+        col2.image(image, width=500)
 
         if col5.button("Apply Detection"):
             results = model_prediction(image)
