@@ -169,7 +169,7 @@ def change_state_live() :
     
 with header :
     _, col1, _ = st.columns([0.2,1,0.1])
-    col1.markdown('<h1 style="color: white;">Automatic Number Plate Detection</h1>', unsafe_allow_html=True)
+    col1.markdown('<h1 style="color: white;">Number Plate Detection</h1>', unsafe_allow_html=True)
 
 
 
